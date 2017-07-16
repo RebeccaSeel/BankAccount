@@ -10,12 +10,16 @@ namespace BankAccount
     {
         //protected double savingsAmount;
         //protected double savingsBal;
+        public double savingsBal = 2567.23d;
+        public double minSavingsBal = 50.0d;
         public double savingsDeposit;
         public double savingsWithdraw;
 
         //properties (type prop and tab twice for setup)
         //public double SavingsAmount { get; set; }
         //public double SavingsBal { get; set; }
+        public double MinSavingsBal { get; }
+        public double SavingsBal { get; set; }
         public double SavingsDeposit { get; set; }
         public double SavingsWithdraw { get; set; }
 
@@ -24,23 +28,38 @@ namespace BankAccount
         {
             //this is the default constructor
         }
-
-        public SavingsAccount(double savingsAmount, double savingsDeposit, double savingsWithdraw)
+        public SavingsAccount(double savingsBal, double savingsDeposit)
         {
-            //this.savingsAmount = savingsAmount;
-            //this.savingsBal = savingsBal;
+            this.savingsBal = savingsBal;
+            this.savingsDeposit = savingsDeposit;
+        }
+
+        public SavingsAccount(double minSavingsBal, double savingsBal, double savingsWithdraw)
+        {
+            this.minSavingsBal = minSavingsBal;
+            this.savingsBal = savingsBal;
+            this.savingsWithdraw = savingsWithdraw;
+        }
+
+
+        public SavingsAccount(double minSavingsBal, double savingsBal, double savingsDeposit, double savingsWithdraw)
+        {
+            this.minSavingsBal = minSavingsBal;
+            this.savingsBal = savingsBal;
             this.savingsDeposit = savingsDeposit;
             this.savingsWithdraw = savingsWithdraw;
-
         }
 
         //create methods
-        public void DepositSavings(double amount)
+        public override string GetSavingsBalance()
+        {
+            return "SavingsBal: " + savingsBal + "\n";
+        }
+        public override void DepositSavings()
         {
             savingsBal += savingsDeposit;
         }
-
-        public void WithdrawSavings(double amount)
+        public override void WithdrawSavings()
         {
             savingsBal -= savingsWithdraw;
         }

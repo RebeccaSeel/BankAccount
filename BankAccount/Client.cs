@@ -9,8 +9,8 @@ namespace BankAccount
     class Client
     {
         //Client is base class
-        protected double checkingBalance = 21362.34d;
-        protected double savingsBalance = 2567.23d;
+        //protected double checkingBalance = 21362.34d;
+        //protected double savingsBalance = 2567.23d;
         //public double depositAmount;
         //public double withdrawAmount;
         //public string clientName = "Sally Smith";
@@ -25,8 +25,8 @@ namespace BankAccount
         //public string clientSavingsAccountNumber;
 
         //properties (type prop and tab twice for setup)
-        public double CheckingBalance { get; set; }
-        public double SavingsBalance { get; set; }
+        //public double CheckingBalance { get; set; }
+        //public double SavingsBalance { get; set; }
         //public double DepositAmount { get; set; }
         //public double WithdrawAmount { get; set; }
         public string ClientName { get; }
