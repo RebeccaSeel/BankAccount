@@ -8,12 +8,14 @@ namespace BankAccount
 {
     class SavingsAccount : Account
     {
-        protected double savingsAmount;
+        //protected double savingsAmount;
+        //protected double savingsBal;
         public double savingsDeposit;
         public double savingsWithdraw;
 
         //properties (type prop and tab twice for setup)
-        public double SavingsAmount { get; set; }
+        //public double SavingsAmount { get; set; }
+        //public double SavingsBal { get; set; }
         public double SavingsDeposit { get; set; }
         public double SavingsWithdraw { get; set; }
 
@@ -25,7 +27,8 @@ namespace BankAccount
 
         public SavingsAccount(double savingsAmount, double savingsDeposit, double savingsWithdraw)
         {
-            this.savingsAmount = savingsAmount;
+            //this.savingsAmount = savingsAmount;
+            //this.savingsBal = savingsBal;
             this.savingsDeposit = savingsDeposit;
             this.savingsWithdraw = savingsWithdraw;
 
@@ -34,12 +37,12 @@ namespace BankAccount
         //create methods
         public void DepositSavings(double amount)
         {
-            savingsAmount += savingsDeposit;
+            savingsBal += savingsDeposit;
         }
 
         public void WithdrawSavings(double amount)
         {
-            savingsAmount -= savingsWithdraw;
+            savingsBal -= savingsWithdraw;
         }
     }
 }
