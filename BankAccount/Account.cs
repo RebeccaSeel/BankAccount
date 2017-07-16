@@ -8,88 +8,92 @@ namespace BankAccount
 {
     class Account
     {
-        //Client is base class
+        //Account is a base class with the following fields
+        public int checkingAccountNumber = 1989022019;
         public double checkingBal = 21362.34d;
-        public double savingsBal = 2567.23d;
-        public double minSavingsBal = 50.0d;
         public double checkingDeposit;
         public double checkingWithdraw;
+
+        public int savingsAccountNumber = 00128321;
+        //public double minSavingsBal = 50.00d;
+        public double savingsBal = 2567.23d;
         public double savingsDeposit;
         public double savingsWithdraw;
 
-        //protected double checkingBal;
-        //protected double savingsBal;
-        //public double amountDeposit;
-        //public double amountWithdraw;
 
-        //properties (type prop and tab twice for setup)
+        //set properties 
         public double CheckingBal { get; }
-        public double MinSavingsBal { get; }
-        public double SavingsBal { get; }
         public double CheckingDeposit { get; set; }
         public double CheckingWithdraw { get; set; }
+        
+        //public double MinSavingsBal { get; }
+        public double SavingsBal { get; }
         public double SavingsDeposit { get; set; }
         public double SavingsWithdraw { get; set; }
-        //public double AmountDeposit { get; set; }
-        //public double AmountWithdraw { get; set; }
+ 
 
-        //constructors 
+        //establish constructors 
         public Account()
         {
             //this is the default constructor
         }
 
-        public Account(double checkingBal, double checkingDeposit, double checkingWithdraw)
+        public Account(double checkingDeposit, double checkingWithdraw)
         {
-            this.checkingBal = checkingBal;
+            //this.checkingBal = checkingBal;
             this.checkingDeposit = checkingDeposit;
             this.checkingWithdraw = checkingWithdraw;            
-            //this.amountDeposit = amountDeposit;
-            //this.amountWithdraw = amountWithdraw;
-
-            checkingBal = 0.0d;
         }
 
-        public Account(double minSavingsBal, double savingsBal, double savingsDeposit, double savingsWithdraw)
+        public Account(double savingsBal, double savingsDeposit, double savingsWithdraw)
         {
-            this.minSavingsBal = minSavingsBal;
+            //this.minSavingsBal = minSavingsBal;
             this.savingsBal = savingsBal;
             this.savingsDeposit = savingsDeposit;
             this.savingsWithdraw = savingsWithdraw;
-            //this.amountDeposit = amountDeposit;
-            //this.amountWithdraw = amountWithdraw;
 
-            savingsBal = 50.0d; //must have a minimum balance of $50.00
+            //minSavingsBal = 50.00d; //must have a minimum balance of $50.00
         }
 
         //create methods
-        public void ChangeBalance()
+        public virtual double ShowInitialCheckingBalance()
         {
-            return;
+            return 21362.34d;
         }
-        public virtual string GetCheckingBalance()
+
+        public virtual double GetCheckingBalance()
         {
-            return "CheckingBal: " + checkingBal + "\n";
+            return checkingBal;
         }
-        public virtual void DepositChecking()
+
+        public virtual double DepositIntoChecking()
         {
-            checkingBal += checkingDeposit;
+            return checkingBal += checkingDeposit;
         }
-        public virtual void WithdrawChecking()
+
+        public virtual double WithdrawFromChecking()
         {
-            checkingBal -= checkingWithdraw;
+            return checkingBal -= checkingWithdraw;
         }
-        public virtual string GetSavingsBalance()
+
+        public virtual double ShowInitialSavingsBalance()
         {
-            return "SavingsBal: " + savingsBal + "\n";
+            return 2567.23d;
         }
-        public virtual void DepositSavings()
+
+        public virtual double GetSavingsBalance()
         {
-            savingsBal += savingsDeposit;
+            return savingsBal;
         }
-        public virtual void WithdrawSavings()
+
+        public virtual double DepositIntoSavings()
         {
-            savingsBal -= savingsWithdraw;
+            return savingsBal += savingsDeposit;
+        }
+
+        public virtual double WithdrawFromSavings()
+        {
+            return savingsBal -= savingsWithdraw;
         }
     }
 }

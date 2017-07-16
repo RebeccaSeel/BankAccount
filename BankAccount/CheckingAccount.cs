@@ -8,21 +8,18 @@ namespace BankAccount
 {
     class CheckingAccount : Account
     {
-        //protected double checkingAmount;
-        //protected double checkingBal;
-        public double checkingBal = 21362.34d;
-        public double checkingDeposit;
-        public double checkingWithdraw;
-        //private double checkingDepositAmount;
+        //CheckingAccount is a derived class of Account with the following fields
+        //public int checkingAccountNumber = 1989022019;
+        //public double checkingBal = 21362.34d;
+        //public double checkingDeposit;
+        //public double checkingWithdraw;
 
-        //properties (type prop and tab twice for setup)
-
-        //public double CheckingAmount { get; }
-        public double CheckingBal { get; set; }
-        public double CheckingDeposit { get; set; }
-        public double CheckingWithdraw { get; set; }
+        //set properties
         //public double CheckingBal { get; set; }
-        //constructors 
+        //public double CheckingDeposit { get; set; }
+        //public double CheckingWithdraw { get; set; }
+       
+        //establish constructors 
         public CheckingAccount()
         {
             //this is the default constructor
@@ -32,36 +29,35 @@ namespace BankAccount
         {
             this.checkingDeposit = checkingDeposit;
         }
+
         public CheckingAccount (double checkingBal, double checkingWithdraw)
         {
             this.checkingBal = checkingBal;
             this.checkingWithdraw = checkingWithdraw;
         }
+
         public CheckingAccount(double checkingBal, double checkingDeposit, double checkingWithdraw)
         {
-            //this.checkingAmount = checkingAmount;
             this.checkingBal = checkingBal;
             this.checkingDeposit = checkingDeposit;
             this.checkingWithdraw = checkingWithdraw;
         }
 
-        //public CheckingAccount(double checkingDepositAmount)
-        //{
-        //    this.checkingDepositAmount = checkingDepositAmount;
-        //}
 
-        //create methods
-        public override string GetCheckingBalance()
+        //create methods for this class
+        public override double GetCheckingBalance()
         {
-            return "CheckingBal: " + checkingBal + "\n";
+            return checkingBal;
         }
-        public override void DepositChecking()
+
+        public override double DepositIntoChecking()
         {
-            checkingBal += checkingDeposit;
+            return checkingBal += checkingDeposit;
         }
-        public override void WithdrawChecking()
+
+        public override double WithdrawFromChecking()
         {
-            checkingBal -= checkingWithdraw;
+            return checkingBal -= checkingWithdraw;
         }
     }
 }

@@ -8,26 +8,30 @@ namespace BankAccount
 {
     class SavingsAccount : Account
     {
-        //protected double savingsAmount;
-        //protected double savingsBal;
-        public double savingsBal = 2567.23d;
-        public double minSavingsBal = 50.0d;
-        public double savingsDeposit;
-        public double savingsWithdraw;
+        //SavingsAccount is a derived classs of Account with the following fields
+        //public int savingsAccountNumber = 00128321;
+        //public double savingsBal = 2567.23d;
+        public double minSavingsBal = 50.00d;
+        //public double savingsDeposit;
+        //public double savingsWithdraw;
 
-        //properties (type prop and tab twice for setup)
-        //public double SavingsAmount { get; set; }
+        //set properties
+        public double MinSavingsBal { get;}
         //public double SavingsBal { get; set; }
-        public double MinSavingsBal { get; }
-        public double SavingsBal { get; set; }
-        public double SavingsDeposit { get; set; }
-        public double SavingsWithdraw { get; set; }
+        //public double SavingsDeposit { get; set; }
+        //public double SavingsWithdraw { get; set; }
 
-        //constructors 
+        //establish constructors 
         public SavingsAccount()
         {
             //this is the default constructor
         }
+
+        public SavingsAccount(double savingsDeposit)
+        {
+            this.savingsDeposit = savingsDeposit;
+        }
+
         public SavingsAccount(double savingsBal, double savingsDeposit)
         {
             this.savingsBal = savingsBal;
@@ -40,8 +44,7 @@ namespace BankAccount
             this.savingsBal = savingsBal;
             this.savingsWithdraw = savingsWithdraw;
         }
-
-
+    
         public SavingsAccount(double minSavingsBal, double savingsBal, double savingsDeposit, double savingsWithdraw)
         {
             this.minSavingsBal = minSavingsBal;
@@ -50,18 +53,20 @@ namespace BankAccount
             this.savingsWithdraw = savingsWithdraw;
         }
 
-        //create methods
-        public override string GetSavingsBalance()
+        //create methods for this class
+        public override double GetSavingsBalance()
         {
-            return "SavingsBal: " + savingsBal + "\n";
+            return savingsBal;
         }
-        public override void DepositSavings()
+
+        public override double DepositIntoSavings()
         {
-            savingsBal += savingsDeposit;
+            return savingsBal += savingsDeposit;
         }
-        public override void WithdrawSavings()
+
+        public override double WithdrawFromSavings()
         {
-            savingsBal -= savingsWithdraw;
+            return savingsBal -= savingsWithdraw;
         }
     }
 }

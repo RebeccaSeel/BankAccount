@@ -21,8 +21,8 @@ namespace BankAccount
         public string clientName;
         public string clientAddress;
         public string clientPhone;
-        //public string clientCheckingAccountNumber;
-        //public string clientSavingsAccountNumber;
+        public string checkingAccountNumber;
+        public string savingsAccountNumber;
 
         //properties (type prop and tab twice for setup)
         //public double CheckingBalance { get; set; }
@@ -32,10 +32,10 @@ namespace BankAccount
         public string ClientName { get; }
         public string ClientAddress { get; }
         public string ClientPhone { get; }
-        //public string ClientCheckingAccountNumber { get; }
-        //public string ClientSavingsAccountNumber { get; }
+        public string CheckingAccountNumber { get; }
+        public string SavingsAccountNumber { get; }
 
-        //constructors 
+        //establish constructors 
         public Client()
         {
             //this is the default constructor
@@ -48,28 +48,21 @@ namespace BankAccount
             this.clientPhone = clientPhone;
         }
 
-        //public Client(double checkingBalance, double savingsBalance)
-        //{
-        //    this.checkingBalance = checkingBalance;
-        //    this.savingsBalance = savingsBalance;
-        //    //this.depositAmount = depositAmount;
-        //    //this.withdrawAmount = withdrawAmount;
-        //}
-
-        //create method
-        public virtual string ShowClientInfo()   //virtual keyword = whoever inherits from this class can override this method
+        public Client(string checkingAccountNumber, string savingsAccountNumber)
         {
-            //Console.WriteLine("Accountholder Name: " + clientName);
-            //Console.WriteLine("Accountholder Address: " + clientAddress);
-            //Console.WriteLine("Accountholder PhoneNumber: " + clientPhone);
-            return ("Accountholder Name: " + clientName + "\nAccountholder Address: " + clientAddress + "\nAccountholder Phone Number: " + clientPhone);
+            this.checkingAccountNumber = checkingAccountNumber;
+            this.savingsAccountNumber = savingsAccountNumber;
         }
 
-        //public virtual string ShowAccountInfo()
-        //{
-        //    return ("Checking Account: " + clientCheckingAccountNumber + "Checking Account Balance: " + checkingBalance + "\nSavings Account: " + clientSavingsAccountNumber + "Savings Account Balance: " + savingsBalance);
-        //    //return ("Checking Account: " + clientCheckingAccountNumber + "Checking Account Balance: " + checkingBalance);
-        //    //return ("Savings Account: " + clientSavingsAccountNumber + "Savings Account Balance: " + savingsBalance);
-        //}
+        //create method
+        public virtual string ShowClientInfo()   
+        {
+             return ("Accountholder Name: " + clientName + "\nAccountholder Address: " + clientAddress + "\nAccountholder Phone Number: " + clientPhone);
+        }
+
+        public virtual string ShowAccountInfo()
+        {
+            return ("Checking Account: " + checkingAccountNumber + "\nSavings Account: " + savingsAccountNumber);
+        }
     }
 }
