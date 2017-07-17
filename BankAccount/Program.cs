@@ -92,7 +92,7 @@ namespace BankAccount
                         Console.WriteLine("\nEnter your Checking Account deposit amount: ");
                         double checkingDeposit = double.Parse(Console.ReadLine());
                         CheckingAccount depositCheckingAccount = new CheckingAccount(checkingDeposit);
-                        depositCheckingAccount.GetCheckingBalance();
+                        depositCheckingAccount.DepositIntoChecking();
                         Console.WriteLine("\nThank you for your deposit! Your new Checking Account Balance is: $" + depositCheckingAccount.DepositIntoChecking());
                         Console.WriteLine("");
                     }
@@ -101,7 +101,7 @@ namespace BankAccount
                         Console.WriteLine("\nEnter your Savings Account deposit amount: ");
                         double savingsDeposit = double.Parse(Console.ReadLine());
                         SavingsAccount depositSavingsAccount = new SavingsAccount(savingsDeposit);
-                        depositSavingsAccount.GetSavingsBalance();
+                        depositSavingsAccount.DepositIntoSavings();
                         Console.WriteLine("\nThank you for your deposit! Your new Savings Account Balance is: $" + depositSavingsAccount.DepositIntoSavings());
                         Console.WriteLine("");
                     }
@@ -127,7 +127,7 @@ namespace BankAccount
                         Console.WriteLine("\nEnter your Checking Account withdraw amount: ");
                         double checkingWithdraw = double.Parse(Console.ReadLine());
                         CheckingAccount withdrawCheckingAccount = new CheckingAccount(checkingWithdraw);
-                        withdrawCheckingAccount.GetCheckingBalance();
+                        withdrawCheckingAccount.WithdrawFromChecking();
                         Console.WriteLine("\nThank you for your withdrawal. Your new Checking Account Balance is: $" + withdrawCheckingAccount.WithdrawFromChecking());
                         Console.WriteLine("");
                     }
@@ -136,7 +136,7 @@ namespace BankAccount
                         Console.WriteLine("\nEnter your Savings Account withdraw amount: ");
                         double savingsWithdraw = double.Parse(Console.ReadLine());
                         SavingsAccount withdrawSavingsAccount = new SavingsAccount(savingsWithdraw);
-                        withdrawSavingsAccount.GetSavingsBalance();
+                        withdrawSavingsAccount.WithdrawFromSavings();
                         Console.WriteLine("\nThank you for your withdrawal. Your new Savings Account Balance is: $" + withdrawSavingsAccount.WithdrawFromSavings());
                         Console.WriteLine("");
                     }

@@ -9,18 +9,11 @@ namespace BankAccount
     class SavingsAccount : Account
     {
         //SavingsAccount is a derived classs of Account with the following fields
-        //public int savingsAccountNumber = 00128321;
-        //public double savingsBal = 2567.23d;
         public double minSavingsBal = 50.00d;
-        //public double savingsDeposit;
-        //public double savingsWithdraw;
-
+    
         //set properties
         public double MinSavingsBal { get;}
-        //public double SavingsBal { get; set; }
-        //public double SavingsDeposit { get; set; }
-        //public double SavingsWithdraw { get; set; }
-
+ 
         //establish constructors 
         public SavingsAccount()
         {
@@ -61,12 +54,12 @@ namespace BankAccount
 
         public override double DepositIntoSavings()
         {
-            return savingsBal += savingsDeposit;
+            return savingsBal + savingsDeposit;
         }
 
         public override double WithdrawFromSavings()
         {
-            return savingsBal -= savingsWithdraw;
+            return savingsBal - savingsWithdraw;
         }
     }
 }

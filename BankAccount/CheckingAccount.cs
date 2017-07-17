@@ -8,16 +8,7 @@ namespace BankAccount
 {
     class CheckingAccount : Account
     {
-        //CheckingAccount is a derived class of Account with the following fields
-        //public int checkingAccountNumber = 1989022019;
-        //public double checkingBal = 21362.34d;
-        //public double checkingDeposit;
-        //public double checkingWithdraw;
-
-        //set properties
-        //public double CheckingBal { get; set; }
-        //public double CheckingDeposit { get; set; }
-        //public double CheckingWithdraw { get; set; }
+        //CheckingAccount is a derived class of Account   
        
         //establish constructors 
         public CheckingAccount()
@@ -42,8 +33,7 @@ namespace BankAccount
             this.checkingDeposit = checkingDeposit;
             this.checkingWithdraw = checkingWithdraw;
         }
-
-
+        
         //create methods for this class
         public override double GetCheckingBalance()
         {
@@ -52,12 +42,12 @@ namespace BankAccount
 
         public override double DepositIntoChecking()
         {
-            return checkingBal += checkingDeposit;
+            return checkingBal + checkingDeposit;
         }
 
         public override double WithdrawFromChecking()
         {
-            return checkingBal -= checkingWithdraw;
+            return checkingBal - checkingWithdraw;
         }
     }
 }

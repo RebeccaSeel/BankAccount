@@ -9,15 +9,6 @@ namespace BankAccount
     class Client
     {
         //Client is base class
-        //protected double checkingBalance = 21362.34d;
-        //protected double savingsBalance = 2567.23d;
-        //public double depositAmount;
-        //public double withdrawAmount;
-        //public string clientName = "Sally Smith";
-        //public string clientAddress = "32789 Duluthe Street, Wayupyonder, Alaska";
-        //public string clientPhone = "(990) 341-2367";
-        //public string clientCheckingAccountNumber = "AX 234059 0002345";
-        //public string clientSavingsAccountNumber = "AP 721134 00000381";
         public string clientName;
         public string clientAddress;
         public string clientPhone;
@@ -25,10 +16,6 @@ namespace BankAccount
         public string savingsAccountNumber;
 
         //properties (type prop and tab twice for setup)
-        //public double CheckingBalance { get; set; }
-        //public double SavingsBalance { get; set; }
-        //public double DepositAmount { get; set; }
-        //public double WithdrawAmount { get; set; }
         public string ClientName { get; }
         public string ClientAddress { get; }
         public string ClientPhone { get; }
